@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wedding-primary: #D4AF37;
+  --color-wedding-secondary: #FFB6C1;
+  --color-wedding-accent: #FCE4EC;
+  --color-wedding-dark: #2C2C2C;
+  --color-wedding-text: #5D5D5D;
+  --color-wedding-bg: #FCF9F2;
+  --font-serif-luxury: "Cormorant Garamond", serif;
+  --font-sans-luxury: "Tenor Sans", sans-serif;
+  --font-script: "Great Vibes", cursive;
+  --font-hand: "Dancing Script", cursive;
+  --font-heading: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-burgundy-royal: #5C2233;
+  --color-clay-warm: #C27D5E;
+  --color-clay-earth: #8D5B4C;
+  --color-tennis-clay: #B85940;
+  --color-gold-deep: #C9963E;
+  --color-gold-button: linear-gradient(135deg, #D4AF37 0%, #B49141 100%);
+  --color-rose-gradient: linear-gradient(135deg, #FFF0F5 0%, #FCE4EC 100%);
+}
+
+/* Shimmer Gold Luxury Typography Effect */
+.shimmer-gold {
+  background: linear-gradient(90deg, #9b7126 0%, #d4af37 25%, #fff2b2 50%, #d4af37 75%, #9b7126 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Subtle breathing & pulse animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), 0 0 30px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 50px rgba(212, 175, 55, 0.25);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes soundWave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+.sound-bar-1 { animation: soundWave 0.8s ease-in-out infinite 0.1s; }
+.sound-bar-2 { animation: soundWave 0.8s ease-in-out infinite 0.3s; }
+.sound-bar-3 { animation: soundWave 0.8s ease-in-out infinite 0.2s; }
+.sound-bar-4 { animation: soundWave 0.8s ease-in-out infinite 0.4s; }
+
+/* Floral Garland Header/Footer simulation with soft gradients & shadows */
+.floral-header-overlay {
+  background-repeat: repeat-x;
+  background-position: top center;
+  background-size: contain;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FDF0E8;
+    color: #2E1810;
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+  }
+
+  /* Custom Luxury Scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF8F3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B85940;
+  }
+}
+
+.sparkle {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+  animation: sparkle 3s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
