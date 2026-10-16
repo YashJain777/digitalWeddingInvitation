@@ -12,14 +12,16 @@ const CHAPTERS = [
         description: 'From historic carved jharokhas to the warm sunset glow over Jaipur’s pink rooftops, our love found its most majestic backdrop in the regal heart of Rajasthan.',
         photos: [
             {
-                src: '/images/jaipur-couple.jpg',
+                src: '/images/jaipur-couple.jpeg',
                 title: 'Strolling Hand in Hand',
-                caption: 'Laughter through the royal sandstone arches of Jaipur’s heritage lanes.'
+                caption: 'Laughter through the royal sandstone arches of Jaipur’s heritage lanes.',
+                position: 'center 75%'
             },
             {
                 src: '/images/jaipur-sunset.jpg',
                 title: 'Sunset at the Royal Jharokha',
-                caption: 'Marigold garlands, ancient rooftops, and eyes that see only each other.'
+                caption: 'Marigold garlands, ancient rooftops, and eyes that see only each other.',
+                position: 'center'
             }
         ]
     },
@@ -32,14 +34,16 @@ const CHAPTERS = [
         description: 'Clay on our hands, joy in our hearts. Love is not found ready-made; it is shaped with gentle hands, mutual patience, and shared smiles.',
         photos: [
             {
-                src: '/images/pottery-couple.jpg',
+                src: '/images/pottery-couple.jpeg',
                 title: 'The Ceramic Studio',
-                caption: 'Getting our hands messy, laughing through every spin of the wheel.'
+                caption: 'Getting our hands messy, laughing through every spin of the wheel.',
+                position: 'center 50%'
             },
             {
-                src: '/images/pottery-detail.jpg',
+                src: '/images/pottery-detail.jpeg',
                 title: 'Crafting Our Tomorrow',
-                caption: 'Patience, gentle touch, and building something that will last forever.'
+                caption: 'Patience, gentle touch, and building something that will last forever.',
+                position: 'center 45%'
             }
         ]
     },
@@ -52,14 +56,16 @@ const CHAPTERS = [
         description: 'Competitive, fun, and energetic. We learned how to cover each other’s blind spots, sprint for drop shots, and stay on the winning team forever.',
         photos: [
             {
-                src: '/images/tennis-couple.jpg',
+                src: '/images/tennis-couple.jpeg',
                 title: 'Doubles Team',
-                caption: 'Matching whites, warm sunshine, and an unbeatable partnership.'
+                caption: 'Matching whites, warm sunshine, and an unbeatable partnership.',
+                position: 'center'
             },
             {
-                src: '/images/tennis-bench.jpg',
+                src: '/images/tennis-bench.jpeg',
                 title: 'Between The Sets',
-                caption: 'Catching our breath on the wooden bench, sharing quiet smiles.'
+                caption: 'Catching our breath on the wooden bench, sharing quiet smiles.',
+                position: 'center 85%'
             }
         ]
     }
@@ -154,12 +160,13 @@ const PreWeddingStory = () => {
                                             src={photo.src}
                                             alt={photo.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            style={{ objectPosition: photo.position || 'center' }}
                                             loading="lazy"
                                         />
 
                                         {/* Hover Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4">
-                                            <span className="text-white font-['Tenor_Sans',sans-serif] text-xs uppercase tracking-wider">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 pointer-events-none">
+                                            <span className="text-white font-['Tenor_Sans',sans-serif] text-xs uppercase tracking-wider drop-shadow-md">
                                                 Click to enlarge
                                             </span>
                                             <div className="p-2 rounded-full bg-white/20 backdrop-blur-md text-white">

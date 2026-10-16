@@ -11,8 +11,9 @@ const STORIES = [
         title: 'Two Hands, One Wheel',
         quote: 'Finding our rhythm in the slow, tactile art of shaping our life together.',
         caption: 'Clay on our hands, joy in our hearts. No poses, just real smiles.',
-        image: '/images/pottery-couple.jpg',
+        image: '/images/pottery-couple.jpeg',
         aspect: 'aspect-[4/3]',
+        position: 'center 50%',
         tone: 'from-[#FDF2E9] to-[#F6DDD2]'
     },
     {
@@ -23,8 +24,9 @@ const STORIES = [
         title: 'Game, Set, Forever',
         quote: 'The easiest doubles partner I could ever ask for—laughing through every rally.',
         caption: 'Matching whites, friendly competition, and a lifetime of shared victories.',
-        image: '/images/tennis-couple.jpg',
+        image: '/images/tennis-couple.jpeg',
         aspect: 'aspect-[4/3]',
+        position: 'center',
         tone: 'from-[#EAF2ED] to-[#DDEBE2]'
     },
     {
@@ -35,8 +37,9 @@ const STORIES = [
         title: 'Shaping Our Tomorrow',
         quote: 'Love is not just found—it is crafted with patience and gentle hands.',
         caption: 'The magic of getting our hands messy and building something lasting.',
-        image: '/images/pottery-detail.jpg',
+        image: '/images/pottery-detail.jpeg',
         aspect: 'aspect-[4/3]',
+        position: 'center 45%',
         tone: 'from-[#FAF0E6] to-[#F4E1D2]'
     },
     {
@@ -47,8 +50,9 @@ const STORIES = [
         title: 'Between The Sets',
         quote: 'Catching our breath side-by-side, sharing secret jokes and golden light.',
         caption: 'Resting on the wooden bench, knowing we are always on the same team.',
-        image: '/images/tennis-bench.jpg',
+        image: '/images/tennis-bench.jpeg',
         aspect: 'aspect-[4/3]',
+        position: 'center 85%',
         tone: 'from-[#EEF5F0] to-[#E3EFE7]'
     }
 ];
@@ -134,6 +138,7 @@ const ClayAndCourtStory = () => {
                                             src={story.image}
                                             alt={story.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            style={{ objectPosition: story.position || 'center' }}
                                             loading="lazy"
                                         />
                                     </div>
