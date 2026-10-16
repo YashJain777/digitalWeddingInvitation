@@ -5,37 +5,37 @@ import { ZoomIn, X, ChevronLeft, ChevronRight, Heart, Sparkles } from 'lucide-re
 const MOMENTS = [
     {
         id: 1,
-        src: '/gallery-1.jpg',
+        src: '/gallery-1.jpeg',
         title: 'Timeless Smiles',
         caption: 'The start of our shared forever, filled with endless laughter.'
     },
     {
         id: 2,
-        src: '/gallery-2.jpg',
+        src: '/gallery-2.jpeg',
         title: 'Golden Hour Together',
         caption: 'Basking in the golden light of love and quiet moments.'
     },
     {
         id: 3,
-        src: '/gallery-3.jpg',
+        src: '/gallery-3.jpeg',
         title: 'Eyes Full of Love',
         caption: 'When two souls meet, every second turns into poetry.'
     },
     {
         id: 4,
-        src: '/gallery-4.jpg',
+        src: '/gallery-4.jpeg',
         title: 'Hand in Hand',
         caption: 'Walking this beautiful journey with you by my side.'
     },
     {
         id: 5,
-        src: '/gallery-5.jpg',
+        src: '/gallery-5.jpeg',
         title: 'Pure Joy & Laughter',
         caption: 'No posed smiles—just honest happiness and deep friendship.'
     },
     {
         id: 6,
-        src: '/gallery-6.jpg',
+        src: '/gallery-6.jpeg',
         title: 'The Promise of Forever',
         caption: 'Looking forward to all the tomorrows we will write together.'
     }

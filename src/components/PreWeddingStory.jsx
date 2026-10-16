@@ -13,15 +13,15 @@ const CHAPTERS = [
         photos: [
             {
                 src: '/images/jaipur-couple.jpeg',
-                title: 'Strolling Hand in Hand',
-                caption: 'Laughter through the royal sandstone arches of Jaipur’s heritage lanes.',
+                title: 'Laughter Under the Arches',
+                caption: 'Sitting beneath the hand-painted royal arches, sharing candid laughter and sweet conversations.',
                 position: 'center 75%'
             },
             {
-                src: '/images/jaipur-sunset.jpg',
-                title: 'Sunset at the Royal Jharokha',
-                caption: 'Marigold garlands, ancient rooftops, and eyes that see only each other.',
-                position: 'center'
+                src: '/images/jaipur-sunset.jpeg',
+                title: 'Grandeur of Patrika Gate',
+                caption: 'Standing before the majestic pink facade and sculpted jharokhas, looking ahead to forever.',
+                position: 'center 65%'
             }
         ]
     },
