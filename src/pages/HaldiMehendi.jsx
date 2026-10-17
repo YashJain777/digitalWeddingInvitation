@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import NavigationLinks from '../components/NavigationLinks';
 
@@ -44,7 +44,7 @@ const HaldiMehendi = () => (
                 >
                     <h2 className="font-heading text-4xl text-wedding-dark tracking-widest uppercase">A Splash of Yellow & Green</h2>
                     <p className="text-xl text-wedding-text leading-relaxed font-sans italic">
-                        "Celebrate the vibrant hues of togetherness. Bind us in the golden glow of Haldi and the intricate patterns of Mehendi as we prepare for our big day."
+                        &ldquo;Celebrate the vibrant hues of togetherness. Bind us in the golden glow of Haldi and the intricate patterns of Mehendi as we prepare for our big day.&rdquo;
                     </p>
                 </motion.div>
 

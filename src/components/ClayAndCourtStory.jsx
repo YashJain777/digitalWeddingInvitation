@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, X, Heart, ZoomIn } from 'lucide-react';
+import { X, Heart, ZoomIn } from 'lucide-react';
 
 const STORIES = [
     {
@@ -86,7 +86,7 @@ const ClayAndCourtStory = () => {
                             The Art &amp; The Game
                         </h2>
                         <p className="font-['Cormorant_Garamond',serif] italic text-base sm:text-xl text-[#7A5847] leading-relaxed mt-2">
-                            Our love story isn't about stiff poses in royal halls. It's about shaping clay with messy hands, sprinting for drop shots, and laughing together through it all.
+                            Our love story isn&apos;t about stiff poses in royal halls. It&apos;s about shaping clay with messy hands, sprinting for drop shots, and laughing together through it all.
                         </p>
                     </motion.div>
 
@@ -169,7 +169,7 @@ const ClayAndCourtStory = () => {
                                     </div>
 
                                     <p className="font-['Cormorant_Garamond',serif] italic text-base sm:text-lg text-[#B85940] leading-snug">
-                                        "{story.quote}"
+                                        &ldquo;{story.quote}&rdquo;
                                     </p>
 
                                     <p className="font-['Inter',sans-serif] text-xs text-[#7A5847] leading-relaxed pt-1">
@@ -196,7 +196,7 @@ const ClayAndCourtStory = () => {
                         <span>✧</span>
                     </div>
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg sm:text-2xl text-[#5A3E2B] leading-relaxed">
-                        "We learned how to play together, how to build together, and how to hold each other gently. Now, we step into the sacred circle with our families."
+                        &ldquo;We learned how to play together, how to build together, and how to hold each other gently. Now, we step into the sacred circle with our families.&rdquo;
                     </p>
                 </motion.div>
             </div>
@@ -239,7 +239,7 @@ const ClayAndCourtStory = () => {
                                     {selectedPhoto.title}
                                 </h4>
                                 <p className="font-['Cormorant_Garamond',serif] italic text-lg text-stone-300">
-                                    "{selectedPhoto.quote}"
+                                    &ldquo;{selectedPhoto.quote}&rdquo;
                                 </p>
                             </div>
                         </motion.div>

@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Calendar, Sparkles } from 'lucide-react';
+import { Clock, MapPin, Calendar } from 'lucide-react';
 
 const EVENTS_DAY1 = [
     {

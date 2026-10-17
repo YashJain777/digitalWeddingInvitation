@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ZoomIn, X, ChevronLeft, ChevronRight, Heart, Sparkles } from 'lucide-react';
+import { ZoomIn, X, ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 
 const MOMENTS = [
     {
@@ -190,7 +190,7 @@ const MomentsGallery = () => {
                                         {MOMENTS[activeIndex].title}
                                     </h4>
                                     <p className="font-['Cormorant_Garamond',serif] italic text-base text-stone-300 mt-1">
-                                        "{MOMENTS[activeIndex].caption}"
+                                        &ldquo;{MOMENTS[activeIndex].caption}&rdquo;
                                     </p>
                                 </div>
                                 <button

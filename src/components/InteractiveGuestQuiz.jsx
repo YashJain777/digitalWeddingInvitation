@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Send, Sparkles, MessageCircleHeart, CheckCircle2 } from 'lucide-react';
+import { Heart, Send, CheckCircle2 } from 'lucide-react';
 
 const MOODS = [
     { id: 'food', label: 'The Food 🍛' },
@@ -46,14 +46,14 @@ const InteractiveGuestQuiz = () => {
         if (saved) {
             try {
                 setWishes(JSON.parse(saved));
-            } catch (e) {
+            } catch {
                 // ignore
             }
         }
     }, []);
 
     const triggerHeartShower = () => {
-        const hearts = Array.from({ length: 18 }).map((_, i) => ({
+        const hearts = Array.from({ length: 18 }).map(() => ({
             id: Math.random(),
             x: Math.random() * 80 + 10,
             y: Math.random() * 20 + 80,
@@ -82,7 +82,7 @@ const InteractiveGuestQuiz = () => {
         setWishes(updated);
         try {
             localStorage.setItem('vs_guest_wishes', JSON.stringify(updated.slice(0, 15)));
-        } catch (e) {
+        } catch {
             // ignore
         }
 
@@ -219,7 +219,7 @@ const InteractiveGuestQuiz = () => {
                             Your Wedding Mood
                         </h3>
                         <p className="font-['Cormorant_Garamond',serif] italic text-base text-stone-600 mb-3">
-                            I'm coming for...
+                            I&apos;m coming for...
                         </p>
                         <div className="flex flex-wrap gap-2.5">
                             {MOODS.map((mood) => (
@@ -305,10 +305,10 @@ const InteractiveGuestQuiz = () => {
                     </AnimatePresence>
                 </motion.form>
 
-                {/* Digital Memory Wall Preview */}
+                {/* Digital Memory Wall Preview (Commented out per request) */}
+                {/*
                 <div className="mt-14 space-y-4">
                     <div className="text-center flex items-center justify-center gap-2 text-[#C9963E]">
-                        <MessageCircleHeart className="w-4 h-4" />
                         <h4 className="font-['Tenor_Sans',sans-serif] text-xs uppercase tracking-[0.25em] text-[#6B4535] font-semibold">
                             Digital Blessings Wall
                         </h4>
@@ -344,12 +344,13 @@ const InteractiveGuestQuiz = () => {
                                 </div>
 
                                 <p className="font-['Cormorant_Garamond',serif] italic text-stone-700 text-sm sm:text-base leading-snug pt-1">
-                                    "{item.note}"
+                                    &ldquo;{item.note}&rdquo;
                                 </p>
                             </div>
                         ))}
                     </div>
                 </div>
+                */}
             </div>
         </section>
     );

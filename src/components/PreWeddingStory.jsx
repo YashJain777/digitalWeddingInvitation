@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Heart, ZoomIn, X, ChevronRight } from 'lucide-react';
+import { Heart, ZoomIn, X } from 'lucide-react';
 
 const CHAPTERS = [
     {
@@ -139,7 +139,7 @@ const PreWeddingStory = () => {
                                 {currentChapter.title}
                             </h3>
                             <p className="font-['Cormorant_Garamond',serif] italic text-lg sm:text-xl text-[#B85940] leading-snug">
-                                "{currentChapter.quote}"
+                                &ldquo;{currentChapter.quote}&rdquo;
                             </p>
                             <p className="font-['Inter',sans-serif] text-xs sm:text-sm text-stone-600 leading-relaxed max-w-2xl mx-auto pt-1">
                                 {currentChapter.description}
@@ -228,7 +228,7 @@ const PreWeddingStory = () => {
                                     {selectedPhoto.title}
                                 </h4>
                                 <p className="font-['Cormorant_Garamond',serif] italic text-base text-stone-300">
-                                    "{selectedPhoto.caption}"
+                                    &ldquo;{selectedPhoto.caption}&rdquo;
                                 </p>
                             </div>
                         </motion.div>

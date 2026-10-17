@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Heart } from 'lucide-react';
 
@@ -7,11 +7,11 @@ const Entrance = ({ onOpen }) => {
     const [isOpening, setIsOpening] = useState(false);
 
     useEffect(() => {
-        const newSparkles = Array.from({ length: 30 }).map((_, i) => ({
+        const newSparkles = Array.from({ length: 14 }).map((_, i) => ({
             id: i,
-            left: `${Math.random() * 94 + 3}%`,
-            top: `${Math.random() * 94 + 3}%`,
-            size: `${Math.random() * 4 + 2}px`,
+            left: `${Math.random() * 90 + 5}%`,
+            top: `${Math.random() * 90 + 5}%`,
+            size: `${Math.random() * 3 + 2}px`,
             delay: `${Math.random() * 3}s`,
             duration: `${Math.random() * 2 + 2}s`
         }));
@@ -19,19 +19,24 @@ const Entrance = ({ onOpen }) => {
     }, []);
 
     const handleEnter = () => {
+        if (isOpening) return;
         setIsOpening(true);
-        setTimeout(() => {
-            onOpen();
-        }, 700);
+        onOpen();
     };
 
     return (
         <motion.section
+            key="entrance-section"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            exit={{
+                opacity: 0,
+                transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
+            }}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-white px-4 overflow-hidden select-none"
-            style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #FDF7F2 100%)' }}
+            style={{
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #FDF7F2 100%)',
+                willChange: 'opacity'
+            }}
         >
             {/* Ambient Sparkle Dust */}
             <div className="absolute inset-0 pointer-events-none">
@@ -55,8 +60,14 @@ const Entrance = ({ onOpen }) => {
             <motion.div
                 initial={{ opacity: 0, y: 25, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="w-[92vw] max-w-md h-[92vh] max-h-[780px] bg-white/90 backdrop-blur-xl px-5 py-8 text-center relative overflow-hidden rounded-2xl shadow-[0_20px_60px_-15px_rgba(184,89,64,0.18)] flex flex-col justify-between items-center"
+                exit={{
+                    opacity: 0,
+                    scale: 1.05,
+                    y: -14,
+                    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+                }}
+                className="w-[92vw] max-w-md h-[92vh] max-h-[780px] bg-white/95 backdrop-blur-md px-5 py-8 text-center relative overflow-hidden rounded-2xl shadow-[0_20px_50px_-15px_rgba(184,89,64,0.16)] flex flex-col justify-between items-center"
+                style={{ willChange: 'transform, opacity' }}
             >
                 {/* Golden Inset Border with Ornate Corners */}
                 <div className="absolute inset-2.5 rounded-2xl border border-[#D4AF37]/45 pointer-events-none">
@@ -76,11 +87,18 @@ const Entrance = ({ onOpen }) => {
                 {/* Main Royal Wedding Logo Crest with Floating Animation */}
                 <div className="flex justify-center items-center w-full my-auto cursor-pointer" onClick={handleEnter}>
                     <motion.div
-                        animate={{
+                        animate={isOpening ? {
+                            scale: 1.08,
+                            y: -8,
+                            opacity: 0.9
+                        } : {
                             y: [-6, 6, -6],
                             scale: [1, 1.025, 1]
                         }}
-                        transition={{
+                        transition={isOpening ? {
+                            duration: 0.35,
+                            ease: "easeOut"
+                        } : {
                             duration: 4.5,
                             repeat: Infinity,
                             ease: "easeInOut"
@@ -136,8 +154,9 @@ const Entrance = ({ onOpen }) => {
                     {/* Interactive Button */}
                     <motion.button
                         onClick={handleEnter}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.96 }}
+                        disabled={isOpening}
+                        whileHover={{ scale: isOpening ? 1 : 1.05 }}
+                        whileTap={{ scale: isOpening ? 1 : 0.96 }}
                         className="mt-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#C9963E] via-[#D4AF37] to-[#B85940] text-white font-['Tenor_Sans',sans-serif] text-xs uppercase tracking-[0.25em] font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 cursor-pointer"
                     >
                         <Sparkles className="w-3.5 h-3.5 text-amber-200 animate-spin" style={{ animationDuration: '4s' }} />

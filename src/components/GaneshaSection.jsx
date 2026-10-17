@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 const GaneshaSection = () => (
@@ -134,7 +134,7 @@ const GaneshaSection = () => (
                     </div>
 
                     <p className="font-script text-xl md:text-3xl leading-relaxed text-wedding-text italic px-2 md:px-4">
-                        "We request the pleasure of your presence for the wedding celebrations of Rahul & Pooja. Your presence will add joy to our new beginnings."
+                        &ldquo;We request the pleasure of your presence for the wedding celebrations of Rahul &amp; Pooja. Your presence will add joy to our new beginnings.&rdquo;
                     </p>
                 </div>
             </motion.div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * PetalsCanvas
@@ -10,10 +10,12 @@ const PetalsCanvas = ({ count = 48, active = true }) => {
     const mousePos = useRef({ x: -1000, y: -1000, radius: 120 });
 
     useEffect(() => {
+        if (!active) return;
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         let animationFrameId;
+        let isCancelled = false;
 
         let width = (canvas.width = window.innerWidth);
         let height = (canvas.height = window.innerHeight);
@@ -149,9 +151,15 @@ const PetalsCanvas = ({ count = 48, active = true }) => {
             }
         };
 
-        render();
+        const timer = setTimeout(() => {
+            if (!isCancelled) {
+                render();
+            }
+        }, 350);
 
         return () => {
+            isCancelled = true;
+            clearTimeout(timer);
             cancelAnimationFrame(animationFrameId);
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);

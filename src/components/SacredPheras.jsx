@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Flame, Heart, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Heart, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const PHERAS = [
     {
@@ -161,7 +161,7 @@ const SacredPheras = () => {
 
                             {/* Ancient Meaning */}
                             <p className="font-['Cormorant_Garamond',serif] italic text-base sm:text-lg text-[#5A3E2B] leading-relaxed mb-6 px-2">
-                                "{current.meaning}"
+                                &ldquo;{current.meaning}&rdquo;
                             </p>
 
                             {/* Personal Couple Vow */}
@@ -169,7 +169,7 @@ const SacredPheras = () => {
                                 <Heart className="w-5 h-5 text-[#B85940] fill-[#B85940] flex-shrink-0 mt-0.5" />
                                 <div>
                                     <span className="font-['Tenor_Sans',sans-serif] text-[10px] uppercase tracking-wider text-[#C9963E] font-bold block mb-0.5">
-                                        Sakshi &amp; Rohit's Promise:
+                                        Sakshi &amp; Rohit&apos;s Promise:
                                     </span>
                                     <p className="font-['Cormorant_Garamond',serif] italic text-sm sm:text-base text-[#2E1810] leading-snug">
                                         {current.vow}

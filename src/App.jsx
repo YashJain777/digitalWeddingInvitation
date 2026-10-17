@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -22,41 +22,61 @@ const AppContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      window.scrollTo(0, 0);
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo(0, 0);
+    }
   }, [location.pathname, isOpen]);
 
   return (
     <div className="min-h-screen bg-[#FDF0E8] font-inter overflow-x-hidden text-[#2E1810]">
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {!isOpen && <Entrance onOpen={() => setIsOpen(true)} />}
       </AnimatePresence>
 
-      {isOpen && (
-        <div className="flex flex-col min-h-screen relative">
-          {/* Subtle Falling Rose Petals & Gold Confetti Canvas */}
-          <PetalsCanvas count={45} active={isOpen} />
+      <div
+        className={`flex flex-col min-h-screen relative transition-opacity duration-700 ease-out ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        aria-hidden={!isOpen}
+      >
+        {/* Subtle Falling Rose Petals & Gold Confetti Canvas */}
+        <PetalsCanvas count={45} active={isOpen} />
 
-          <Header />
+        <Header />
 
-          <main className="flex-grow pt-14">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/reception" element={<GanpatiSthapana />} />
-              <Route path="/sangeet" element={<HaldiMehendi />} />
-              <Route path="/wedding" element={<TheWedding />} />
-              <Route path="/celebration" element={<Celebration />} />
-            </Routes>
-          </main>
+        <main className="flex-grow pt-14">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/reception" element={<GanpatiSthapana />} />
+            <Route path="/sangeet" element={<HaldiMehendi />} />
+            <Route path="/wedding" element={<TheWedding />} />
+            <Route path="/celebration" element={<Celebration />} />
+          </Routes>
+        </main>
 
-          {/* Interactive Ceremonial Flower Shower (Pushpavrishti) & Diya Blessing */}
-          <FlowerShower />
+        {/* Interactive Ceremonial Flower Shower (Pushpavrishti) & Diya Blessing */}
+        <FlowerShower />
 
-          {/* Luxury Music Player Button with Audio Wave Rings */}
-          <MusicPlayer isOpen={isOpen} />
+        {/* Luxury Music Player Button with Audio Wave Rings */}
+        <MusicPlayer isOpen={isOpen} />
 
-          <Footer />
-        </div>
-      )}
+        <Footer />
+      </div>
     </div>
   );
 };

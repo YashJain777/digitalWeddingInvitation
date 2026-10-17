@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Heart, MapPin } from 'lucide-react';
 
@@ -68,7 +68,7 @@ const Footer = () => {
                         Warm Regards &amp; RSVP
                     </p>
                     <p className="font-['Cormorant_Garamond',serif] italic text-stone-200 text-sm">
-                        "Your gracious presence will make our joyous celebration complete."
+                        &ldquo;Your gracious presence will make our joyous celebration complete.&rdquo;
                     </p>
                     <div className="font-['Tenor_Sans',sans-serif] text-sm tracking-widest uppercase text-white font-bold pt-1">
                         Ranka &amp; Surana Family

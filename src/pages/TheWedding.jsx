@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import NavigationLinks from '../components/NavigationLinks';
 
@@ -45,7 +45,7 @@ const TheWedding = () => (
                     <h2 className="font-heading text-4xl text-wedding-dark tracking-widest uppercase">The Eternal Bond</h2>
                     <div className="h-[2px] w-24 bg-wedding-primary mx-auto mb-8"></div>
                     <p className="text-xl text-wedding-text leading-relaxed font-sans italic">
-                        "Two hearts beat as one, two lives become a single journey. We invite you to witness our sacred vows as we step into our forever together under the blessings of our elders."
+                        &ldquo;Two hearts beat as one, two lives become a single journey. We invite you to witness our sacred vows as we step into our forever together under the blessings of our elders.&rdquo;
                     </p>
                 </motion.div>
             </div>
@@ -157,7 +157,7 @@ const TheWedding = () => (
                             </div>
                             <div className="h-[2px] w-24 bg-wedding-primary mx-auto lg:mx-0"></div>
                             <p className="text-xl text-wedding-text leading-relaxed font-sans font-light">
-                                "The sacred fire will bear witness as we take the seven steps towards a lifetime of friendship and love. The midnight starlight will bless our new beginning."
+                                &ldquo;The sacred fire will bear witness as we take the seven steps towards a lifetime of friendship and love. The midnight starlight will bless our new beginning.&rdquo;
                             </p>
                             <div className="inline-flex flex-col gap-2 px-8 py-4 bg-wedding-accent/20 rounded-3xl border border-wedding-secondary/10">
                                 <p className="font-heading text-xl text-wedding-dark tracking-widest">TUESDAY • 10 MARCH</p>
@@ -225,7 +225,7 @@ const TheWedding = () => (
                     viewport={{ once: true }}
                     className="max-w-2xl mx-auto space-y-6"
                 >
-                    <p className="font-script text-3xl text-wedding-secondary">"Your presence is the greatest gift we could receive. Join us as we celebrate the magic of love and tradition."</p>
+                    <p className="font-script text-3xl text-wedding-secondary">&ldquo;Your presence is the greatest gift we could receive. Join us as we celebrate the magic of love and tradition.&rdquo;</p>
                     <div className="flex justify-center gap-6 text-wedding-primary">
                         <span className="animate-pulse">✧</span>
                         <span className="animate-pulse" style={{ animationDelay: '0.2s' }}>✧</span>

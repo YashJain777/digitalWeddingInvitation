@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import NavigationLinks from '../components/NavigationLinks';
 
@@ -72,7 +72,7 @@ const Celebration = () => (
                     <h2 className="font-heading text-4xl text-wedding-dark tracking-[0.2em] uppercase">A Night of Magic</h2>
                     <div className="h-[2px] w-24 bg-wedding-primary mx-auto"></div>
                     <p className="text-xl text-wedding-text leading-relaxed font-sans italic">
-                        "Under the shimmer of a thousand stars, join us as we dance, celebrate, and create memories that will last a lifetime. A perfect evening of music, love, and laughter awaits."
+                        &ldquo;Under the shimmer of a thousand stars, join us as we dance, celebrate, and create memories that will last a lifetime. A perfect evening of music, love, and laughter awaits.&rdquo;
                     </p>
                 </motion.div>
             </div>

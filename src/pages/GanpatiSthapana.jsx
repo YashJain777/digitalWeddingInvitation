@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import NavigationLinks from '../components/NavigationLinks';
 
@@ -44,7 +44,7 @@ const GanpatiSthapana = () => (
                 >
                     <h2 className="font-heading text-4xl text-wedding-dark">The Auspicious Start</h2>
                     <p className="text-xl text-wedding-text leading-relaxed font-sans">
-                        "As we embark on this sacred journey of love, we seek the divine blessings of Lord Ganesha to remove all obstacles and fill our lives with happiness and prosperity."
+                        &ldquo;As we embark on this sacred journey of love, we seek the divine blessings of Lord Ganesha to remove all obstacles and fill our lives with happiness and prosperity.&rdquo;
                     </p>
                     <div className="flex justify-center gap-4 text-wedding-primary">
                         <span>✧</span><span>✧</span><span>✧</span>
